@@ -4,15 +4,6 @@
 
 $this->title = 'My Yii Application';
 
-        $faker = Faker\Factory::create('ru_RU');
-
-        for($i=0;$i<1000;$i++){
-            $build[$i]['address'] = $faker->address.' - '.$faker->randomDigitNotNull;
-            $build[$i]['latitude'] = $faker->randomFloat(7,82.7,82.9);
-            $build[$i]['longitude'] = $faker->randomFloat(7,54.7,54.9);
-        }
-        var_dump($build);
-
 ?>
 <div class="site-index">
 

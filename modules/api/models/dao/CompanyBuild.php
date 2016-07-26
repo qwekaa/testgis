@@ -17,7 +17,7 @@ class CompanyBuild extends AbstractDao
                 'c.title'
             ])->from('building b')
             ->innerJoin('company c','b.id = c.id_building')
-            ->where('b.id = :id_building',[':id_building' => $Filter->id_building])
+            ->where('b.id = :id_building',[':id_building' => $Filter->build])
             ->orderBy('c.title');
         return $query;
     }

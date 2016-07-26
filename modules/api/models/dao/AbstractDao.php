@@ -20,11 +20,12 @@ abstract class AbstractDao
     private $DataFilter;
 
 
-    public function __construct(DataFilter $DataFilter)
+    public function setFilter(DataFilter $DataFilter)
     {
         $this->DataFilter = $DataFilter;
     }
-    
+
+
     protected function getFilter()
     {
         return $this->DataFilter;
