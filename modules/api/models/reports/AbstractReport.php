@@ -2,6 +2,8 @@
 
 namespace app\modules\api\models\reports;
 
+use app\modules\api\models\filters\DataFilter;
+
 abstract class AbstractReport
 {
     /**
@@ -21,5 +23,9 @@ abstract class AbstractReport
         return $this->DataFilter;
     }
     
+    /**
+     * Функция возвращает данные и если нужно, то 
+     * выполняет какие-л преобразования
+     */
     abstract public function getData();
 }

@@ -15,10 +15,10 @@ class CompanyBuild extends AbstractDao
         $query = (new \yii\db\Query())
             ->select([
                 'c.title'
-            ])->from('build b')
+            ])->from('building b')
             ->innerJoin('company c','b.id = c.id_building')
             ->where('b.id = :id_building',[':id_building' => $Filter->id_building])
-            ->orderBy('c.name');
+            ->orderBy('c.title');
         return $query;
     }
 }
