@@ -11,6 +11,10 @@ class FactoryDao
     
     const COMPANYRUBRICK = 'comrub';
     
+    const COMPANYRADIUS = 'comrad';
+    
+    const COMPANYRECT = 'comrect';
+    
     /**
      * 
      * @param string $report_id
@@ -23,9 +27,11 @@ class FactoryDao
         $mapDao = [
             self::COMPANYBUILD => 'CompanyBuild',
             self::COMPANYRUBRICK => 'CompanyRubrick',
+            self::COMPANYRADIUS => 'CompanyRadius',
+            self::COMPANYRECT => 'CompanyRect',
         ];
         if (!isset($mapDao[$report_id])) {
-            throw new \Exception('The report have not found');
+            throw new \Exception('Класс не найден');
         }
         $daoClass = 'app\\modules\\api\\models\\dao\\'.$mapDao[$report_id];
         $dao      = new $daoClass;
