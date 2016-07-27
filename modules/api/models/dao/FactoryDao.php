@@ -15,6 +15,8 @@ class FactoryDao
     
     const COMPANYRECT = 'comrect';
     
+    const BUILDS = 'builds';
+    
     /**
      * 
      * @param string $report_id
@@ -29,6 +31,7 @@ class FactoryDao
             self::COMPANYRUBRICK => 'CompanyRubrick',
             self::COMPANYRADIUS => 'CompanyRadius',
             self::COMPANYRECT => 'CompanyRect',
+            self::BUILDS => 'Builds',
         ];
         if (!isset($mapDao[$report_id])) {
             throw new \Exception('Класс не найден');
