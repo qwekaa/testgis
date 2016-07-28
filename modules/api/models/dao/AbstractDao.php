@@ -45,6 +45,11 @@ abstract class AbstractDao
     {
         return $this->query()->all();
     }
+    
+    public function getOneExec()
+    {
+        return $this->query()->one();
+    }
 
 }
 

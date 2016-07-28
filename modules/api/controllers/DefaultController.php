@@ -32,4 +32,18 @@ class DefaultController extends Controller
         \Yii::$app->response->format = \yii\web\Response::FORMAT_JSON;
         return $result;
     }
+    
+    public function actionV2($report_id)
+    {
+        $DataFilter = new DataFilter();
+        $get = \Yii::$app->request->get();
+        $result = [];
+        if ($DataFilter->load($get,'') && $DataFilter->validate()){
+            $Report = \app\modules\api\models\reports\FactoryReport::create($report_id, $DataFilter);
+            //$Report = new \app\modules\api\models\reports\CompanyIdReport($report_id, $DataFilter);
+            $result = $Report->getData();
+        }
+        \Yii::$app->response->format = \yii\web\Response::FORMAT_JSON;
+        return $result;
+    }
 }

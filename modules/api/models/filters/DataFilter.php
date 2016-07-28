@@ -18,6 +18,9 @@ class DataFilter extends \yii\base\Model
     
     public $y;
 
+    public $id_company;
+    
+    public $title_company;
 
     public function rules()
     {
@@ -27,7 +30,12 @@ class DataFilter extends \yii\base\Model
             [['radius','x','y'],'double'],
             
             [['latitude','longitude'], 'filter', 'filter' => 'floatval'],
-            [['radius','x','y'], 'filter', 'filter' => 'floatval'],            
+            [['radius','x','y'], 'filter', 'filter' => 'floatval'],
+            
+            ['id_company','integer'],
+            //[['id_company',], 'filter', 'filter' => 'intval'],
+            
+            ['title_company','string'],
         ];
     }
 }

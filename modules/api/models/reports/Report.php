@@ -9,7 +9,7 @@ class Report extends AbstractReport
 
     public function getData()
     {
-        $dao = FactoryDao::getInstance($this->getReportId(), $this->getFilter());
+        $dao = $this->getDao();//FactoryDao::getInstance($this->getReportId(), $this->getFilter());
         return $dao->getAllExec();
     }
 

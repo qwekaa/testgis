@@ -14,18 +14,36 @@ abstract class AbstractReport
     
     private $report_id;
 
+    private $dao;
+    
+    public function setDao($dao)
+    {
+        $this->dao = $dao;
+    }
 
-    public function __construct($report_id,DataFilter $DataFilter)
+    public function getDao()
+    {
+        return $this->dao;
+    }
+
+
+    /*public function __construct($report_id,DataFilter $DataFilter)
     {
         $this->DataFilter = $DataFilter;
         $this->report_id = $report_id;
-    }
+    }*/
     
     protected function getFilter()
     {
         return $this->DataFilter;
     }
     
+    public function setFilter(DataFilter $DataFilter)
+    {
+        $this->DataFilter = $DataFilter;
+    }
+
+        
     protected function getReportId()
     {
         return $this->report_id;
