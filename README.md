@@ -105,7 +105,7 @@ api/comtitle?title_company=ОАО АлмазЛифт
 ~~~
 
 Список всех организаций, которые относятся к указанной рубрике, с учетом вложенности рубрик
- ([Проверить этот запрос](http://cd01621.tmweb.ru/api/comrub?rubrick=4))
+ ([Проверить этот запрос](http://cd01621.tmweb.ru/api/comsrub?rubrick=4))
 ~~~
 api/comsrub?rubrick=<id_рубрики>
 api/comsrub?rubrick=4
