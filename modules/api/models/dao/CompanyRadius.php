@@ -4,9 +4,11 @@ namespace app\modules\api\models\dao;
 
 use yii\db\Expression;
 
+/**
+ * Выбор команий в радиусе
+ */
 class CompanyRadius extends AbstractDao
 {
-    //http://localhost/test/2gis/web/api/default/v1/?report_id=comrad&radius=0.01&latitude=82.78&longitude=54.78
     public function query()
     {
         $Filter = $this->getFilter();

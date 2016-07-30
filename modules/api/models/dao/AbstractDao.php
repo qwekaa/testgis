@@ -33,6 +33,7 @@ abstract class AbstractDao
 
 
     /**
+     * 
      * @return \yii\db\Query
      */
     abstract public function query();

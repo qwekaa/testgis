@@ -5,7 +5,7 @@ namespace app\modules\api\models\dao;
 /*
  * Выборка компаний по id или названию команиии
  */
-class CompanyId extends AbstractDao
+class CompanyTitle extends AbstractDao
 {
     public function query()
     {
@@ -17,8 +17,7 @@ class CompanyId extends AbstractDao
                 'b.address',
             ])->from('company c')
             ->innerJoin('building b','b.id = c.id_building')
-            ->andfilterWhere(['c.id' => $Filter->id_company])
-            ->andFilterWhere(['like', 'c.title', $Filter->title_company]);
+            ->where(['like', 'c.title', $Filter->title_company]);
             
             
         return $query;

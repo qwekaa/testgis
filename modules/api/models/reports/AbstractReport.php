@@ -4,6 +4,9 @@ namespace app\modules\api\models\reports;
 
 use app\modules\api\models\filters\DataFilter;
 
+/**
+ * Абстрактный класс для отчетов. 
+ */
 abstract class AbstractReport
 {
     /**
@@ -21,6 +24,10 @@ abstract class AbstractReport
         $this->dao = $dao;
     }
 
+    /**
+     * 
+     * @return \app\modules\api\models\dao\AbstractDao
+     */
     public function getDao()
     {
         return $this->dao;

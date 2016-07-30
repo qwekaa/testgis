@@ -43,9 +43,8 @@ $config = [
             'enablePrettyUrl' => true,
             'showScriptName' => false,
             'rules' => [
-                'api/defaul/v1/<report_id:[\w_\/-]+>' => 'api/defaul/v1',
-                //'shop/category/<category:[\w_\/-]+>'=>'shop/category',
-                //'pages/<page:[\w-]+>' => 'static/pages',
+                'api/<report_id:[\w_\/-]+>' => 'api/default/v1',
+
             ],
         ],
     ],

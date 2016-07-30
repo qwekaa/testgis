@@ -5,8 +5,8 @@ use yii\db\Migration;
 class m160725_144638_data extends Migration
 {
 
-    // Use safeUp/safeDown to run migration code within a transaction
-    public function safeUp()
+
+    public function Up()
     {
         $build = [];
         $faker = Faker\Factory::create('ru_RU');
@@ -36,8 +36,8 @@ class m160725_144638_data extends Migration
         
         $phones = [];
         for($i=0;$i<=20000;$i++){
-            $phones[$i]['id_company'] = mt_rand(1,10000);
-            $phones[$i]['number'] = $faker->phoneNumber;
+            $phones[$i]['id_company'] = mt_rand(1,9500);
+            $phones[$i]['number'] = $faker->phoneNumber.' - '.$faker->randomDigitNotNull.' - '.$faker->randomDigitNotNull;
         }
         $this->batchInsert('phone', ['id_company','number'], $phones);
         
@@ -59,8 +59,8 @@ class m160725_144638_data extends Migration
         
         $companyrubrick = [];
         $exist = [];
-        for($i=0;$i<20000;$i++){
-            $id_c = mt_rand(1, 20000);
+        for($i=0;$i<15000;$i++){
+            $id_c = mt_rand(1, 10000);
             $id_r = mt_rand(1, 12);
             $str = (string)($id_c.$id_r);
             if (!in_array($str, $exist) ){

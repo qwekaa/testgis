@@ -2,7 +2,10 @@
 
 namespace app\modules\api\models\dao;
 
-class CompanyRubrick extends AbstractDao
+/**
+ * Выбирает компании по указанным рубрикам
+ */
+class CompaniesRubrick extends AbstractDao
 {
     public function query()
     {
@@ -13,8 +16,9 @@ class CompanyRubrick extends AbstractDao
             ])->from('company c')
             ->innerJoin('companyrubrick cr','c.id = cr.id_company')
             ->innerJoin('rubrick r','r.id = cr.id_rubrick')
-            ->where('r.id = :id_rubrick',[':id_rubrick' => $Filter->rubrick])
+            ->where(['in','r.id',$Filter->rubrick])
             ->orderBy('c.title');
         return $query;
     }
+
 }

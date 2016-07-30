@@ -2,6 +2,9 @@
 
 namespace app\modules\api\models\filters;
 
+/**
+ * класс с фильтрующими полями
+ */
 class DataFilter extends \yii\base\Model
 {
     public $build;
@@ -35,7 +38,7 @@ class DataFilter extends \yii\base\Model
             ['id_company','integer'],
             //[['id_company',], 'filter', 'filter' => 'intval'],
             
-            ['title_company','string'],
+            ['title_company','string','min' => 2],
         ];
     }
 }

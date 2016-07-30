@@ -2,6 +2,9 @@
 
 namespace app\modules\api\models\reports;
 
+/**
+ * Класс фабрика, возващающий нужный отчет по запросу.
+ */
 class FactoryReport
 {
     
@@ -16,6 +19,10 @@ class FactoryReport
     const BUILDS = 'builds';
     
     const COMPANY = 'comid';
+    
+    const COMPANYTITLE = 'comtitle';
+    
+    const COMPANIESRUBRICK = 'comsrub';
 
     
     protected static $report_id;
@@ -23,6 +30,12 @@ class FactoryReport
     protected static $DataFilter;
 
 
+    /**
+     * Статический метод для создания класса отчета
+     * @param string $report_id
+     * @param DataFilter $DataFilter
+     * @return \app\modules\api\models\reports\AbstractReport
+     */
     public static function create($report_id,$DataFilter)
     {
 
@@ -56,26 +69,25 @@ class FactoryReport
     {
         return [
             self::COMPANYBUILD => ['dao' => 'CompanyBuild'],
-            self::COMPANYRUBRICK => ['dao' => 'CompanyRubrick'],
+            self::COMPANYRUBRICK => ['dao' => 'CompaniesRubrick'],
             self::COMPANYRADIUS => ['dao' => 'CompanyRadius'],
             self::COMPANYRECT => ['dao' => 'CompanyRect'],
             self::BUILDS => ['dao' => 'Builds'],
             self::COMPANY => ['dao' => 'CompanyId',
                 'report' => 'CompanyIdReport'],
+            self::COMPANYTITLE => ['dao' => 'CompanyTitle'],
+            self::COMPANIESRUBRICK => ['dao' => 'CompaniesRubrick',
+                'report' => 'CompaniesRubrickReport',
+            ],
         ];
     }
     
     protected static function getDaoClass()
     {
-        $mapClass = self::map();
+        $mapClass   = self::map();
         $nsDaoClass = 'app\\modules\\api\\models\\dao\\';
-        return $nsDaoClass.$mapClass[self::$report_id]['dao'];
+        $daoClass   = $mapClass[self::$report_id]['dao'];
+        return $nsDaoClass.$daoClass;
     }
-    
 
-    public function instanceDao()
-    {
-        $map = self::map();
-        $nsDaoClass = 'app\\modules\\api\\models\\dao\\';
-    }
 }

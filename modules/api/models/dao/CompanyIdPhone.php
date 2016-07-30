@@ -2,8 +2,10 @@
 
 namespace app\modules\api\models\dao;
 
-use yii\db\Expression;
 
+/**
+ * Телефоны комании
+ */
 class CompanyIdPhone extends AbstractDao
 {
     public function query()

@@ -4,9 +4,11 @@ namespace app\modules\api\models\dao;
 
 use yii\db\Expression;
 
+/**
+ * Выбор команий в прямоугольной области
+ */
 class CompanyRect extends AbstractDao
 {
-    //http://localhost/test/2gis/web/api/default/v1/?report_id=comrect&x=0.02&y=0.02&latitude=82.78&longitude=54.78
     public function query()
     {
         $Filter = $this->getFilter();

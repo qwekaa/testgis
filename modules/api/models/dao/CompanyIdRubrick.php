@@ -2,8 +2,9 @@
 
 namespace app\modules\api\models\dao;
 
-use yii\db\Expression;
-
+/**
+ * Рубрики комании
+ */
 class CompanyIdRubrick extends AbstractDao
 {
     public function query()
